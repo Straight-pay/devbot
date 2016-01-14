@@ -10,6 +10,10 @@
 
 module.exports = (robot) ->
 
+  # robot.on "github-repo-event", (repo_event) =>
+  #   githubPayload = repo_event.payload
+  #   robot.logger.info("Github post received: ", githubPayload)
+  #
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
