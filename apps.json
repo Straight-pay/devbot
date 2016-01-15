@@ -1,0 +1,9 @@
+{
+  "straight_pay": {
+    "provider": "heroku",
+    "repository": "mwitek/straight_pay",
+    "environments": ["staging", "production"],
+    "heroku_staging_name": "straight-pay-staging",
+    "heroku_production_name": "straight-pay-production"
+  }
+}

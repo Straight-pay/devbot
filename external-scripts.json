@@ -9,6 +9,7 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-github-deployments",
-  "hubot-github-webhook-listener"
+  "hubot-github-webhook-listener",
+  "hubot-deploy",
+  "hubot-deploy-heroku"
 ]

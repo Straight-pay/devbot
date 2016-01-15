@@ -8,7 +8,7 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-module.exports = (robot) ->
+# module.exports = (robot) ->
 
   # robot.on "github-repo-event", (repo_event) =>
   #   githubPayload = repo_event.payload
