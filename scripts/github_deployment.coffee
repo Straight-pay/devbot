@@ -28,7 +28,7 @@ module.exports = (robot) ->
                 title: "Deploying to #{serverEnv}"
                 title_link: "#{JSON.parse(body).target_url}"
                 text: "==== Deployment of #{branchName} to #{serverEnv} complete! ===="
-              channel: "#hubot-test-chat" # optional, defaults to message.room
+              channel: "#devops" # optional, defaults to message.room
               username: "devbot" # optional, defaults to robot.name
           else
             robot.emit 'slack.attachment',
@@ -36,7 +36,7 @@ module.exports = (robot) ->
                 color: "warning"
                 title: "Deploying to #{serverEnv}"
                 text: "==== Deploying, #{branchName} to #{serverEnv} ===="
-              channel: "#hubot-test-chat" # optional, defaults to message.room
+              channel: "#devops" # optional, defaults to message.room
               username: "devbot" # optional, defaults to robot.name
     else
       msg.send "Sorry, I can't deploy #{deployment.name}, the provider is unsupported"
