@@ -22,10 +22,22 @@ module.exports = (robot) ->
         dep = new HerokuDeployment(body, process.env.HEROKU_API_KEY, process.env.GITHUB_TOKEN, robot.logger)
         dep.run (err,res,body,reaper)->
           if res?
-            msg.send "==== Deployment of #{branchName} to #{serverEnv} complete! ===="
+            robot.emit 'slack.attachment',
+              content:
+                color: "good"
+                title: "Deploying to #{serverEnv}"
+                title_link: "#{JSON.parse(body).target_url}"
+                text: "==== Deployment of #{branchName} to #{serverEnv} complete! ===="
+              channel: "#hubot-test-chat" # optional, defaults to message.room
+              username: "devbot" # optional, defaults to robot.name
           else
-            msg.send "==== Deploying, #{branchName} to #{serverEnv} ===="
-        
+            robot.emit 'slack.attachment',
+              content:
+                color: "warning"
+                title: "Deploying to #{serverEnv}"
+                text: "==== Deploying, #{branchName} to #{serverEnv} ===="
+              channel: "#hubot-test-chat" # optional, defaults to message.room
+              username: "devbot" # optional, defaults to robot.name
     else
       msg.send "Sorry, I can't deploy #{deployment.name}, the provider is unsupported"
 
